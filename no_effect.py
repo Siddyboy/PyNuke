@@ -1,23 +1,34 @@
 #!/usr/bin/env python3
 
-"""Calculation of the percentage effect on gamma counts for a given temperature.
+"""Calculation of the percentage effect on gamma counts for a given
+temperature.
 
-A program to calculate gamma radiation anisotropy for 54Mn and 60Co
-nuclear orientation thermometers.
+Calculates gamma radiation anisotropy for 54Mn and 60Co nuclear orientation
+thermometers.
 
-Thermometer material selection is contained in module 'material.py'.
-Usually 60Co in hcp Co at Oxford Instruments at the time of writing.
+Args:
+    T: Temperature in Kelvin
+    
+Returns:
+    The drop in counts in percent from the warm value
+     
+Raises:
+    Some errors/exceptions?
+    
+Notes:
+    Thermometer material selection is contained in module 'material.py'.
+    Usually 60Co in hcp Co at Oxford Instruments at the time of writing.
 
-The detector angle is set in module 'detector_angle.py'. Usually set
-to zero at Oxford Instruments.
+    The detector angle is set in module 'detector_angle.py'. Usually set
+    to zero at Oxford Instruments.
 
-The source-detector distance and detector face diameter are set in
-module 'solid_angle.py'.
+    The source-detector distance and detector face diameter are set in
+    module 'solid_angle.py'.
 
-Some physical constants are set up in module 'constants.py'
+    Some physical constants are set up in module 'constants.py'
 
-The numbers in square brackets e.g. [2] refer to references contained
-in module 'references.py'.
+    The numbers in square brackets e.g. [2] refer to references contained
+    in file 'references.md'.
 
 Current status at 15/3/17
 Still setting up and getting under git control.
