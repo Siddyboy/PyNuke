@@ -45,14 +45,14 @@ __author__ = "Simon C. J. Kingsley"
 __email__ = "simon.kingsley@oxinst.com"
 __email__ = "scjk@btinternet.com"
 
-from math import exp as expo
+from math import exp as exp
 from math import factorial as fact
 from math import sqrt as sqrt
 
 import constants
 import material
-import Detector_Angle
-import Solid_Angle
+import detector_angle
+import solid_angle
 
 def em(gn, Bhf, J):
     """
@@ -112,7 +112,7 @@ def boltzmann(m, J, deltae, T):
     # function.
     partition_sum = 0.0
     for n in range(-J, J + 1):
-        partition_sum += expo((-1 * n * deltae) / (kB * T))
+        partition_sum += exp((-1 * n * deltae) / (kB * T))
     partition = partition_sum
 
     # Calculate the relative population.
@@ -241,10 +241,10 @@ def B4(J, T):
 
     """
 
-    roottop = (2 * J + 1) * 9 * math.factorial(2 * J - 4)
-    rootbot = math.factorial(2 * J + 5)
+    roottop = (2 * J + 1) * 9 * fact(2 * J - 4)
+    rootbot = fact(2 * J + 5)
 
-    b4_result = 70 * (J ** 4) * math.sqrt(roottop / rootbot) * f4(J, T)
+    b4_result = 70 * (J ** 4) * sqrt(roottop / rootbot) * f4(J, T)
     return b4_result
 
 

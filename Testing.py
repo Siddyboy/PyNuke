@@ -5,6 +5,6 @@ Created on 6 Jan 2014
 
 '''
 import doctest
-import nuclear_orientation
+import no_effect
 
-doctest.testmod(nuclear_orientation, verbose=True)
+doctest.testmod(no_effect, verbose=True)
