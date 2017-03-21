@@ -16,36 +16,45 @@ In this order:
 * U4F4 coefficients, dimensionless. [2]
 * epsilon. Fraction deviation from full magnetic saturation. [2]
 
-TODO(SCJK) Turn this into a dict or something? 
-
 '''
-material = 1
 
-if material == 1:
-    active = "cobalt-60"
-    host = "cobalt (hcp) single crystal"
-    moment = 3.799
-    # Alternative older value [2]. SCJK 7 Jan 2014
-    # moment = 3.754
-    field = -21.92
-    spin = 5
-    parity = "+"
-    U2F2 = -0.42056
-    U4F4 = -0.24280
-    epsilon = 0.0
+mat_cobalt = {
+    'active': "cobalt-60",
+    'host': "cobalt (hcp) single crystal",
+    'moment': 3.799,
+# Alternative, older value [2]. SCJK 7 Jan 2014
+    'moment_old': 3.754,  
+    'field': -21.92,
+    'spin': 5,
+    'parity': "+",
+    'U2F2': -0.42056,
+    'U4F4': -0.24280,
+    'epsilon': 0.0
+     }
+    
+mat_manganese = {
+    'active': "manganese-54",
+    'host': "nickel",
+    'moment': 3.2819,
+# Alternative older value [2]. SCJK 7 Jan 2014
+    'moment_old': 3.302,
+    'field': -32.56,
+    'spin': 3,
+    'parity': "+",
+    'U2F2': -0.49486,
+    'U4F4': -0.44669,
+# Not sure this should be zero for 54Mn. SCJK 21 Mar 2017
+    'epsilon': 0.0,  
+    }
 
-elif material == 2:
-    active = "manganese-54"
-    host = "nickel"
-    moment = 3.2819
-    # Alternative older value [2]. SCJK 7 Jan 2014
-    # moment = 3.302
-    field = -32.56
-    spin = 3
-    parity = "+"
-    U2F2 = -0.49486
-    U4F4 = -0.44669
-    epsilon = 0.0  # Not sure this should be zero for 54Mn...
-
-else:
-    raise Exception("Problem with material selection.")
+#    active = "cobalt-60"
+#    host = "cobalt (hcp) single crystal"
+#    moment = 3.799
+#    # Alternative older value [2]. SCJK 7 Jan 2014
+#    # moment = 3.754
+#    field = -21.92
+#    spin = 5
+#    parity = "+"
+#    U2F2 = -0.42056
+#    U4F4 = -0.24280
+#    epsilon = 0.0

@@ -55,11 +55,11 @@ import detector_angle
 import solid_angle
 
 def em(gn: dict(type = float, help = "Nuclear magnetic dipole moment (nuclear g-factor), dimensionless."),
-       Bhf: dict(type=float, help = "hyperfine field, T."),
+       Bhf: dict(type=float, help = "hyperfine field, Tesla"),
        J: dict(type = int, help = "nuclear-spin angular-momentum, dimensionless."),
        ) -> dict(type = float, help = "The Zeeman splitting energy per nuclear-spin angular-momentum sub-state."):
     """
-     
+     Noooooooooo change back to googlestyle for now
     
     Args:
         gn (flo): 
