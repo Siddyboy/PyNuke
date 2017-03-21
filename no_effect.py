@@ -54,18 +54,28 @@ import material
 import detector_angle
 import solid_angle
 
-def em(gn, Bhf, J):
+def em(gn: dict(type = float, help = "Nuclear magnetic dipole moment (nuclear g-factor), dimensionless."),
+       Bhf: dict(type=float, help = "hyperfine field, T."),
+       J: dict(type = int, help = "nuclear-spin angular-momentum, dimensionless."),
+       ) -> dict(type = float, help = "The Zeeman splitting energy per nuclear-spin angular-momentum sub-state."):
     """
-    Calculates the Zeeman splitting energy per nuclear-spin
-    angular-momentum sub-state. The absolute value is taken because
-    it's just a delta. This means positive temperatures are returned
-    even with negative hyperfine fields.
-    I'm not convinced about the reasons for this... but it's consistent
-    with the data in Table I reference [2].
-    gn = nuclear magnetic dipole moment (nuclear g-factor),
-         dimensionless.
-    Bhf = hyperfine field, T.
-    J = nuclear-spin angular-momentum, dimensionless.
+     
+    
+    Args:
+        gn (flo): 
+        Bhf (flo): 
+        J: 
+    
+    Returns:
+    
+    Raises:
+    
+    Notes:
+        The absolute value is taken because it's just a delta. This means
+        positive temperatures are returned even with negative hyperfine fields.
+        
+        I'm not convinced about the reasons for this... but it's consistent
+        with the data in Table I of reference [2].
 
     >>> em(1, 1, 1)
     5.05084e-27
@@ -74,8 +84,8 @@ def em(gn, Bhf, J):
     >>> em(3.799, -21.92, 5)/1.38066e-23
     0.006092796984445121
     >>>
-
     """
+    
     # Pull in fundamental constants. No shit.
     mun = constants.NUCLEAR_MAGNETON
 
@@ -345,4 +355,8 @@ def effect(T):
 
     return effect_result
 
-
+if __name__ == '__main__':
+    effect(.05)
+    
+    
+    

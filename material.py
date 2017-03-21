@@ -16,6 +16,8 @@ In this order:
 * U4F4 coefficients, dimensionless. [2]
 * epsilon. Fraction deviation from full magnetic saturation. [2]
 
+TODO(SCJK) Turn this into a dict or something? 
+
 '''
 material = 1
 
