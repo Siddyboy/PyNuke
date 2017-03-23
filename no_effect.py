@@ -43,14 +43,14 @@ probably therefore not if name = main on this one?!
 
 __author__ = "Simon C. J. Kingsley"
 __email__ = "simon.kingsley@oxinst.com"
-__email__ = "scjk@btinternet.com"
 
 from math import exp as exp
 from math import factorial as fact
 from math import sqrt as sqrt
 
+from material import mat_cobalt as material
+
 import constants
-import material
 import detector_angle
 import solid_angle
 
@@ -146,8 +146,8 @@ def f2(J, T):
 
     """
     # Get material moment and hyperfine field
-    gn = material.moment
-    Bhf = material.field
+    gn = material['moment']
+    Bhf = material['field']
 
     # Get Zeeman energy splitting per spin sub-state.
     deltae = em(gn, Bhf, J)
@@ -179,8 +179,8 @@ def f4(J, T):
 
     """
     # Get material moment and hyperfine field
-    gn = material.moment
-    Bhf = material.field
+    gn = material['moment']
+    Bhf = material['field']
 
     # Get Zeeman energy splitting per spin sub-state.
     deltae = em(gn, Bhf, J)
@@ -338,10 +338,10 @@ def effect(T):
     TODO(SCJK) Temperature in what units????
     """
     # Load data from the 'material' module.
-    J = material.spin
-    e = material.epsilon
-    UF2 = material.U2F2
-    UF4 = material.U4F4
+    J = material['spin']
+    e = material['epsilon']
+    UF2 = material['U2F2']
+    UF4 = material['U4F4']
 
     # Load cosine of detector angle and solid angle from modules.
     ct = detector_angle.cos_theta
