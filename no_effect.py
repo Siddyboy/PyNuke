@@ -8,13 +8,13 @@ thermometers.
 
 Args:
     T: Temperature in Kelvin
-    
+
 Returns:
     The drop in counts in percent from the warm value
-     
+
 Raises:
     Some errors/exceptions?
-    
+
 Notes:
     Thermometer material selection is contained in module 'material.py'.
     Usually 60Co in hcp Co at Oxford Instruments at the time of writing.
@@ -54,22 +54,23 @@ import constants
 import detector_angle
 import solid_angle
 
-def em(gn: dict(type = float, help = "Nuclear magnetic dipole moment (nuclear g-factor), dimensionless."),
-       Bhf: dict(type=float, help = "hyperfine field, Tesla"),
-       J: dict(type = int, help = "nuclear-spin angular-momentum, dimensionless."),
-       ) -> dict(type = float, help = "The Zeeman splitting energy per nuclear-spin angular-momentum sub-state."):
+
+def em(gn, Bhf, J):
     """
-     Noooooooooo change back to googlestyle for now
-    
+    Return the Zeeman splitting energy per nuclear-spin angular-momentum
+    sub-state.
+
+    Desc....?
+
     Args:
-        gn (flo): 
-        Bhf (flo): 
-        J: 
-    
+        gn (flo): Nuclear magnetic dipole moment (nuclear g-factor), dimensionless.
+        Bhf (flo): hyperfine field, Tesla
+        J (int): nuclear-spin angular-momentum, dimensionless.
+
     Returns:
-    
+
     Raises:
-    
+
     Notes:
         The absolute value is taken because it's just a delta. This means
         positive temperatures are returned even with negative hyperfine fields.
